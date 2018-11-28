@@ -9,7 +9,7 @@
 					<td>&nbsp;</td>
 					<td style="text-align:right">
 					
-					<input type="button" name="Add Phidget" onclick="JSDialog.openDialog('/hcf/jsp/content/forms/phidget-new.html', this, null, {buttonName:'Save'})" value="Add Phidget">
+					<input type="button" name="Add Phidget" onclick="JSDialog.openDialog('jsp/content/forms/phidget-new.html', this, null, {buttonName:'Save'})" value="Add Phidget">
 					
 					</td>
 				</tr>

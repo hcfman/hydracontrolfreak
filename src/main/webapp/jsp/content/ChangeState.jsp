@@ -98,7 +98,7 @@ function toggleCheck(button) {
                         }
                         
                         div.checked {
-                        	background: #5b5b5b url(/hcf/images/check-icon128.png) no-repeat 15px center;
+                        	background: #5b5b5b url(images/check-icon128.png) no-repeat 15px center;
                         }
                         
                         div.button > input { 

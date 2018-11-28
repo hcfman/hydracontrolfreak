@@ -23,7 +23,7 @@ FreakFormListener = function () {
 	
 	this.editFreak = function (note) {
 		var subject = FreakController.getFreakByName(note.data.name);
-		JSDialog.openDialog('/hcf/jsp/content/forms/freak-new.html', note.sender, subject, {buttonName:'Save'});
+		JSDialog.openDialog('jsp/content/forms/freak-new.html', note.sender, subject, {buttonName:'Save'});
 	};
 	
 	this.didLoadEditFreak = function (note) {

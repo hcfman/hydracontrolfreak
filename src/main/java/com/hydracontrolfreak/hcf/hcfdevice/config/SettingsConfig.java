@@ -7,8 +7,8 @@ public class SettingsConfig {
 	private volatile String version = "";
 	private volatile String webPrefix = "";
 	private volatile Integer encoderThreads = 1;
-	private volatile Integer emailThreads = 4;
-	private volatile Integer httpThreads = 4;
+	private volatile Integer emailThreads = 12;
+	private volatile Integer httpThreads = 12;
 	private volatile Integer connectTimeout = 5000;
 	private volatile boolean checkMount = true;
 	private volatile Integer freeSpace = 500;

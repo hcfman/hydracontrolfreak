@@ -63,7 +63,7 @@ CertificateController = function () {
     	var data = Configuration.toJSON( certificate );
     	
     	jQuery.ajax( {
-            url : '/hcf/gencert',
+            url : 'gencert',
             type : 'POST',
             data : data,
             contentType: 'application/json',
@@ -99,7 +99,7 @@ CertificateController = function () {
     	var data = Configuration.toJSON( {certificate:certificate} );
     	
     	jQuery.ajax( {
-            url : '/hcf/importowncert',
+            url : 'importowncert',
             type : 'POST',
             data : data,
             contentType: 'application/json',
@@ -134,7 +134,7 @@ CertificateController = function () {
     	var data = Configuration.toJSON( stores );
     	
     	jQuery.ajax( {
-            url : '/hcf/editcerts',
+            url : 'editcerts',
             type : 'POST',
             data : data,
             contentType: 'application/json',
@@ -164,7 +164,7 @@ CertificateController = function () {
     	var data = Configuration.toJSON( fetchInfo );
     	
     	jQuery.ajax( {
-            url : '/hcf/installcert',
+            url : 'installcert',
             type : 'POST',
             data : data,
             contentType: 'application/json',

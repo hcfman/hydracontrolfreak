@@ -18,7 +18,7 @@ SharedTemplates.setTemplate('buttongroup-list-row', '\
 SharedTemplates.setTemplate('buttongroup-group', '\
 	<tr>\
 	<td class="group-name">%{name} <input type="button" onclick="ButtonGroupController.listener.removeButtonGroup(\'%{name}\')" value="-"></td>\
-	<td><input type="button" title="%{name}" onclick="JSDialog.openDialog(\'/hcf/jsp/content/forms/button-new.html\', this, null, {buttonName:\'Add\'})" value="Add Button" name="Add Button">\
+	<td><input type="button" title="%{name}" onclick="JSDialog.openDialog(\'jsp/content/forms/button-new.html\', this, null, {buttonName:\'Add\'})" value="Add Button" name="Add Button">\
 		<table class="buttons round">%{buttons}</table></td>\
 	<td><a href="%{buttonsUrl}">%{buttonsUrl}</a></td>\
 	</tr>\

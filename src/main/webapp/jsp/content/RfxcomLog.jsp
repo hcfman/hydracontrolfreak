@@ -5,12 +5,12 @@
 <jsp:include page="/jsp/content/components/scripts.jsp" />
 
 <!-- Loading system log scripts -->
-<script type="text/javascript" src="/hcf/js/rfxcom-log/controller.js"></script>
+<script type="text/javascript" src="js/rfxcom-log/controller.js"></script>
 
 <!-- Start loading the config -->
 <script type="text/javascript">
 	try {
-		ConfigLoadJSON('/hcf/rfxcomloggetjson');
+		ConfigLoadJSON('rfxcomloggetjson');
 	} catch (e) {
 		console.error( e );
 	}

@@ -106,7 +106,7 @@ SyntheticController = function () {
     	}
     	
     	jQuery.ajax( {
-            url : '/hcf/synthetics',
+            url : 'synthetics',
             type : 'POST',
             data : Configuration.toJSON(syntheticsList),
             contentType: 'application/json',

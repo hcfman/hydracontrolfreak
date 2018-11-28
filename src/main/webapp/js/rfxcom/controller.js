@@ -111,7 +111,7 @@ RfxcomController = function () {
     	var data = Configuration.toJSON( this.getCommandList() );
     	
     	jQuery.ajax( {
-            url : '/hcf/rfxcom',
+            url : 'rfxcom',
             type : 'POST',
             data : data,
             contentType: 'application/json',

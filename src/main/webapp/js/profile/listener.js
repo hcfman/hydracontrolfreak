@@ -67,7 +67,7 @@ ProfileFormListener = function () {
 	
 	this.editProfile = function (note) {
 		var subject = ProfileController.getProfileByName(note.data.name);
-		JSDialog.openDialog('/hcf/jsp/content/forms/profile-new.html', note.sender, subject, {buttonName:'Save'});
+		JSDialog.openDialog('jsp/content/forms/profile-new.html', note.sender, subject, {buttonName:'Save'});
 	};
 	
 	this.didLoadEditProfile = function (note) {

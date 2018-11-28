@@ -8,7 +8,7 @@
 					<td>&nbsp;</td>
 					<td style="text-align:right">
 					
-					<input type="button" name="Add Button Group" onclick="JSDialog.openDialog('/hcf/jsp/content/forms/buttongroup-new.html', this, null, {buttonName:'Save'})" value="Add Button Group">
+					<input type="button" name="Add Button Group" onclick="JSDialog.openDialog('jsp/content/forms/buttongroup-new.html', this, null, {buttonName:'Save'})" value="Add Button Group">
 					
 					</td>
 				</tr>
@@ -38,17 +38,17 @@
 <jsp:include page="/jsp/content/components/scripts.jsp" />
 
 <!-- Loading action scripts -->
-<script type="text/javascript" src="/hcf/js/button-groups/templates.js"></script>
-<script type="text/javascript" src="/hcf/js/button-groups/helpers.js"></script>
-<script type="text/javascript" src="/hcf/js/button-groups/listener.js"></script>
-<script type="text/javascript" src="/hcf/js/button-groups/builder.js"></script>
-<script type="text/javascript" src="/hcf/js/button-groups/controller.js"></script>
-<script type="text/javascript" src="/hcf/js/button-groups/validators.js"></script>
+<script type="text/javascript" src="js/button-groups/templates.js"></script>
+<script type="text/javascript" src="js/button-groups/helpers.js"></script>
+<script type="text/javascript" src="js/button-groups/listener.js"></script>
+<script type="text/javascript" src="js/button-groups/builder.js"></script>
+<script type="text/javascript" src="js/button-groups/controller.js"></script>
+<script type="text/javascript" src="js/button-groups/validators.js"></script>
 
 <!-- Start loading the config -->
 <script type="text/javascript">
 	try {
-		ConfigLoadJSON('/hcf/buttonsgetjson');
+		ConfigLoadJSON('buttonsgetjson');
 	} catch (e) {
 		console.error( e );
 	}

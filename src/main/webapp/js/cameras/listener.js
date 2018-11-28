@@ -39,7 +39,7 @@ CameraFormListener = function () {
 	this.editCamera = function (note) {
 		var index = note.data.index;
 		var camera = CameraController.getCameraByIndex(index);
-		JSDialog.openDialog('/hcf/jsp/content/forms/camera-new.html', note.sender, camera, {buttonName:'Save'});
+		JSDialog.openDialog('jsp/content/forms/camera-new.html', note.sender, camera, {buttonName:'Save'});
 	};
 	
 	/*

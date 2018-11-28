@@ -60,7 +60,7 @@ ActionBuilder = function () {
 			jQuery('#counter').html('');
 			jQuery('#addCounter').val("Add counter");
 			jQuery('#addCounter').click(function() {
-				JSDialog.openDialog('/hcf/jsp/content/forms/counter-new.html', this, null, {buttonName:'Save', width:'500px'});
+				JSDialog.openDialog('jsp/content/forms/counter-new.html', this, null, {buttonName:'Save', width:'500px'});
 			});
 		});
 	};

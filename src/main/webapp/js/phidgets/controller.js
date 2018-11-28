@@ -127,7 +127,7 @@ PhidgetController = function () {
     	var data = Configuration.toJSON( this.phidgets );
     	
     	jQuery.ajax( {
-            url : '/hcf/phidgets',
+            url : 'phidgets',
             type : 'POST',
             data : data,
             contentType: 'application/json',

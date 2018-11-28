@@ -8,7 +8,7 @@
 					<td>&nbsp;</td>
 					<td style="text-align:right">
 					
-					<input type="button" name="Add Profile" onclick="JSDialog.openDialog('/hcf/jsp/content/forms/profile-new.html', this, null, {buttonName:'Save'})" value="Add Profile">
+					<input type="button" name="Add Profile" onclick="JSDialog.openDialog('jsp/content/forms/profile-new.html', this, null, {buttonName:'Save'})" value="Add Profile">
 					
 					</td>
 				</tr>

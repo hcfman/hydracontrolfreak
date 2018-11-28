@@ -62,7 +62,7 @@ CheckUpdates = function() {
 
 			jQuery('#downloadProgress').prepend(
 					'<span id="progressValue">0%</span>');
-			jQuery.get('/hcf/downloadupdates', this._progressRequest);
+			jQuery.get('downloadupdates', this._progressRequest);
 		}
 	};
 
@@ -73,7 +73,7 @@ CheckUpdates = function() {
 
 					timeout : 30000,
 					cache : false,
-					url : '/hcf/dprogress',
+					url : 'dprogress',
 					type : 'GET',
 
 					contentType : 'application/json',
@@ -103,7 +103,7 @@ CheckUpdates = function() {
 								jQuery('#_downloadProgress').remove();
 								alert(label
 										+ '\n\nSee "System Log" for details');
-								// location.assign('/hcf/systemlog');
+								// location.assign('systemlog');
 							} else { // DONE!
 								jQuery('#_downloadProgress').remove();
 								CheckUpdates.rebootSystem();
@@ -124,14 +124,14 @@ CheckUpdates = function() {
 	this.rebootSystem = function() {
 		jQuery.ajax({
 			cache : false,
-			url : '/hcf/reboot',
+			url : 'reboot',
 			type : 'GET',
 
 			contentType : 'application/json',
 			dataType : 'json'
 		});
 
-		Reboot('Rebooting the system', 630, '/hcf/');
+		Reboot('Rebooting the system', 630, '.');
 	};
 
 	JSNotificationCenter.addObserver(this, 'shouldUpdate',

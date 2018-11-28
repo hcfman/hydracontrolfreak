@@ -11,7 +11,7 @@ SystemSettingsController = function () {
     this.checkUpdates = function() {
     	ShowActivity(true, 'Check for updates...');
     	jQuery.ajax( {
-            url : '/hcf/checkupdates',
+            url : 'checkupdates',
             type : 'POST',
             data : {'timestamp': new Date().getTime()},
             contentType: 'application/json',
@@ -28,7 +28,7 @@ SystemSettingsController = function () {
             		CheckUpdates.setCheckUpdatesJSON(response);
             		JSDialog.setController(CheckUpdates);
 					                	JSDialog.openDialog(
-							'/hcf/jsp/content/forms/updates-available.html',
+							'jsp/content/forms/updates-available.html',
 							CheckUpdates, null, {
 								buttonName : 'Update',
 								width : '300px'
@@ -134,7 +134,7 @@ SystemSettingsController = function () {
     	var data = Configuration.toJSON( settings );
     	
     	jQuery.ajax( {
-            url : '/hcf/datetime',
+            url : 'datetime',
             type : 'POST',
             data : data,
             contentType: 'application/json',
@@ -177,7 +177,7 @@ SystemSettingsController = function () {
     	var data = Configuration.toJSON( settings );
     	
     	jQuery.ajax( {
-            url : '/hcf/network',
+            url : 'network',
             type : 'POST',
             data : data,
             contentType: 'application/json',
@@ -218,7 +218,7 @@ SystemSettingsController = function () {
     	var data = Configuration.toJSON( settings );
     	
     	jQuery.ajax( {
-            url : '/hcf/preferences',
+            url : 'preferences',
             type : 'POST',
             data : data,
             contentType: 'application/json',

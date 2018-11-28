@@ -25,7 +25,7 @@
 		
 		<ul>
 		<li>X10 PIR events</li>
-		<li>Input events from a <a href="http://www.phidgets.com/">Phidgets</a> I/O card (<a href="http://www.phidgets.com/products.php?category=0&product_id=1018">1018 - PhidgetInterfaceKit 8/8/8</a>)</li>
+		<li>Input events from a <a href="http://www.phidgets.com/">Phidgets</a> I/O card (<a href="http://www.phidgets.com/">1018 - PhidgetInterfaceKit 8/8/8</a>)</li>
 		<li>Used defined buttons created in a button group (A page of buttons) from the Button Groups page</li>
 		<li>Other HCF's (They connect to this HCF via the url /hcf/net?event=eventName or /hcf/guest/net?event=eventName)</li>
 		<li>Calendar scheduled events from the Schedule Actions page</li>

@@ -53,7 +53,7 @@ LinkBuilder = new (function () {
 			default		:	listType = 'listmjpg'	; break;
 		}
 		
-		var link 	= '/hcf/' + listType;
+		var link 	= listType;
 		var params 	= []; 
 		this.createCamerasLink(params, cameras) 
 		this.createEventsLink(params, events) +
@@ -236,7 +236,7 @@ LinkBuilder = new (function () {
 		var json 	= Configuration.toJSON(links);
 		
 		jQuery.ajax( {
-            url : '/hcf/savelinks',
+            url : 'savelinks',
             type : 'POST',
             contentType: 'application/json',
             dataType: 'json',

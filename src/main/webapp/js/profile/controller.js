@@ -133,7 +133,7 @@ ProfileController = function () {
     	var data = Configuration.toJSON( this.profileList );
     	
     	jQuery.ajax( {
-            url : '/hcf/profiles',
+            url : 'profiles',
             type : 'POST',
             data : data,
             contentType: 'application/json',

@@ -1,6 +1,6 @@
 
 
 <ul>
-	<li><a href="/hcf/gettingstarted">Getting Started</a></li>
-	<li><a href="/hcf/manual">Reference Manual</a></li>
+	<li><a href="gettingstarted">Getting Started</a></li>
+	<li><a href="manual">Reference Manual</a></li>
 </ul>

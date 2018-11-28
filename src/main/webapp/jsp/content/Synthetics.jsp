@@ -9,7 +9,7 @@
 					<td>&nbsp;</td>
 					<td style="text-align:right">
 					
-					<input type="button" name="Add Synthetic" onclick="JSDialog.openDialog('/hcf/jsp/content/forms/synthetic-new.html', this, null, {buttonName:'Save'})" value="Add Combination Events">
+					<input type="button" name="Add Synthetic" onclick="JSDialog.openDialog('jsp/content/forms/synthetic-new.html', this, null, {buttonName:'Save'})" value="Add Combination Events">
 					
 					</td>
 				</tr>

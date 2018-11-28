@@ -1,16 +1,16 @@
 <h1>Links</h1>
 
 <ul>
-	<li><a href="/hcf/listmjpg" title="/hcf/listmjpg">List MJPEG events</a></li>
-	<li><a href="/hcf/listpjpg" title="/hcf/listpjpg">List PJPEG events (Pseudo MJPEG)</a></li>
-	<li><a href="/hcf/listwebm" title="/hcf/listwebm">List WEBM events</a></li>
-	<li><a href="/hcf/changestate" title="/hcf/changestate">Change state buttons</a></li>
+	<li><a href="listmjpg" title="listmjpg">List MJPEG events</a></li>
+	<li><a href="listpjpg" title="listpjpg">List PJPEG events (Pseudo MJPEG)</a></li>
+	<li><a href="listwebm" title="listwebm">List WEBM events</a></li>
+	<li><a href="changestate" title="changestate">Change state buttons</a></li>
 </ul>
 
 <jsp:include page="components/scripts.jsp" />
 
-<script type="text/javascript" src="/hcf/js/links/templates.js"></script>
-<script type="text/javascript" src="/hcf/js/links/linkbuilder.js"></script>
+<script type="text/javascript" src="js/links/templates.js"></script>
+<script type="text/javascript" src="js/links/linkbuilder.js"></script>
 
 <h2>My Links</h2>
 <table class="data">
@@ -212,7 +212,7 @@
 		});
 		
 		JSNotificationCenter.addObserver(obj, 'initialise', 'LoadedJSON');
-		ConfigLoadJSON('/hcf/linkbuildergetjson');
+		ConfigLoadJSON('linkbuildergetjson');
 	} catch (e) {
 		console.error( e );
 	}

@@ -26,7 +26,7 @@ PhidgetFormListener = function () {
 	
 	this.editPhidget = function (note) {
 		var subject = PhidgetController.getPhidgetByName(note.data.name);
-		JSDialog.openDialog('/hcf/jsp/content/forms/phidget-new.html', note.sender, subject, {buttonName:'Save'});
+		JSDialog.openDialog('jsp/content/forms/phidget-new.html', note.sender, subject, {buttonName:'Save'});
 	};
 	
 	this.didLoadEditPhidget = function (note) {

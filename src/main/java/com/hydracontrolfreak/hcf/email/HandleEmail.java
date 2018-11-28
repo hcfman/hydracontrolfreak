@@ -173,7 +173,7 @@ public class HandleEmail implements Runnable {
 									"\\$\\{responseUrl\\}",
 									hcfConfig.getSettingsConfig()
 											.getWebPrefix()
-											+ "/hcf/buttons?group="
+											+ "buttons?group="
 											+ URLEncoder.encode(responseGroup,
 													"UTF-8"));
 				} catch (UnsupportedEncodingException e) {
@@ -188,7 +188,7 @@ public class HandleEmail implements Runnable {
 			if (plain) {
 				sb.append("\n\n");
 				sb.append(hcfConfig.getSettingsConfig().getWebPrefix());
-				sb.append("/hcf/" + viewType + "?t=");
+				sb.append(viewType + "?t=");
 				sb.append(event.getEventTime());
 				sb.append("&cam=");
 				sb.append(i.toString());
@@ -200,7 +200,7 @@ public class HandleEmail implements Runnable {
 										.getName())).replaceAll(
 								"\\$\\{url\\}",
 								hcfConfig.getSettingsConfig().getWebPrefix()
-										+ "/hcf/" + viewType + "?t="
+										+ viewType + "?t="
 										+ event.getEventTime() + "&cam="
 										+ i.toString()));
 			}
