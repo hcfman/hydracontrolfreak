@@ -8,7 +8,7 @@
 					<td>&nbsp;</td>
 					<td style="text-align:right">
 					
-					<input type="button" name="Add Device" onclick="JSDialog.openDialog('/hcf/jsp/content/forms/rfxcom-new.html', this, null, {buttonName:'Save'})" value="Add RFXCOM Command">
+					<input type="button" name="Add Device" onclick="JSDialog.openDialog('jsp/content/forms/rfxcom-new.html', this, null, {buttonName:'Save'})" value="Add RFXCOM Command">
 					
 					</td>
 				</tr>
@@ -41,12 +41,12 @@
 <jsp:include page="/jsp/content/components/scripts.jsp" />
 
 <!-- Loading action scripts -->
-<script type="text/javascript" src="/hcf/js/rfxcom/templates.js"></script>
-<script type="text/javascript" src="/hcf/js/rfxcom/helpers.js"></script>
-<script type="text/javascript" src="/hcf/js/rfxcom/listener.js"></script>
-<script type="text/javascript" src="/hcf/js/rfxcom/builder.js"></script>
-<script type="text/javascript" src="/hcf/js/rfxcom/controller.js"></script>
-<script type="text/javascript" src="/hcf/js/rfxcom/validators.js"></script>
+<script type="text/javascript" src="js/rfxcom/templates.js"></script>
+<script type="text/javascript" src="js/rfxcom/helpers.js"></script>
+<script type="text/javascript" src="js/rfxcom/listener.js"></script>
+<script type="text/javascript" src="js/rfxcom/builder.js"></script>
+<script type="text/javascript" src="js/rfxcom/controller.js"></script>
+<script type="text/javascript" src="js/rfxcom/validators.js"></script>
 
 <!-- Start loading the config -->
 <script type="text/javascript">

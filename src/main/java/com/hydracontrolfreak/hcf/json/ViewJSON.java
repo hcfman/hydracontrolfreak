@@ -104,8 +104,7 @@ public class ViewJSON {
 		webPrefixes = new String[arraySize];
 
 		for (int i = 0; i < actualSize; i++)
-			webPrefixes[i] = hcfConfig.getSettingsConfig().getWebPrefix()
-					+ "/hcf/";
+			webPrefixes[i] = hcfConfig.getSettingsConfig().getWebPrefix();
 	}
 
 	public void filter(String startDateStr, String endDateStr, String times,

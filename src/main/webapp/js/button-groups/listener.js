@@ -40,7 +40,7 @@ ButtonGroupFormListener = function () {
 	this.editButton = function (groupName, buttonName, sender) {
 		var subject = ButtonGroupController.getButtonInGroup(groupName, buttonName);
 		sender._groupName = groupName;
-		JSDialog.openDialog('/hcf/jsp/content/forms/button-new.html', sender, subject, {buttonName:'Save'});
+		JSDialog.openDialog('jsp/content/forms/button-new.html', sender, subject, {buttonName:'Save'});
 	};
 	
 	this.didLoadEditButton = function (note) {

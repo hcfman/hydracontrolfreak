@@ -106,7 +106,7 @@ WatchdogController = function () {
     	}
     	
     	jQuery.ajax( {
-            url : '/hcf/watchdogs',
+            url : 'watchdogs',
             type : 'POST',
             data : Configuration.toJSON(watchdogsList),
             contentType: 'application/json',

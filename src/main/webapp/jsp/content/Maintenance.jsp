@@ -29,7 +29,7 @@
 	<div class="section-content">
 		<h2>Backup</h2>
 		<br> <input type="button" value="Backup"
-			onclick="JSDialog.openDialog('/hcf/jsp/content/forms/backup-new.html', {name: 'Backup'}, 'restoreform', {buttonName:'Download'})">
+			onclick="JSDialog.openDialog('jsp/content/forms/backup-new.html', {name: 'Backup'}, 'restoreform', {buttonName:'Download'})">
 	</div>
 </div>
 
@@ -41,10 +41,10 @@
 		<br>
 		<!-- 
 		<input type="button" value="Restore"
-			onclick="JSDialog.openDialog('/hcf/jsp/content/forms/restore-new.html', this, null, {buttonName:'Upload'})">
+			onclick="JSDialog.openDialog('jsp/content/forms/restore-new.html', this, null, {buttonName:'Upload'})">
  -->
 		<input type="button" value="Restore"
-			onclick="JSDialog.openDialog('/hcf/jsp/content/forms/restore-new.html', {name: 'Restore'}, 'restoreform', {buttonName:'Upload'})">
+			onclick="JSDialog.openDialog('jsp/content/forms/restore-new.html', {name: 'Restore'}, 'restoreform', {buttonName:'Upload'})">
 	</div>
 </div>
 

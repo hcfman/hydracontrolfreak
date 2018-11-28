@@ -8,7 +8,7 @@
 					<td>&nbsp;</td>
 					<td style="text-align:right">
 					
-					<input type="button" name="Add camera" onclick="JSDialog.openDialog('/hcf/jsp/content/forms/camera-new.html', this, null, {buttonName:'Save'})" value="Add Camera">
+					<input type="button" name="Add camera" onclick="JSDialog.openDialog('jsp/content/forms/camera-new.html', this, null, {buttonName:'Save'})" value="Add Camera">
 					
 					</td>
 				</tr>
@@ -43,17 +43,17 @@
 <jsp:include page="/jsp/content/components/scripts.jsp" />
 
 <!-- Loading action scripts -->
-<script type="text/javascript" src="/hcf/js/cameras/templates.js"></script>
-<script type="text/javascript" src="/hcf/js/cameras/helpers.js"></script>
-<script type="text/javascript" src="/hcf/js/cameras/listener.js"></script>
-<script type="text/javascript" src="/hcf/js/cameras/builder.js"></script>
-<script type="text/javascript" src="/hcf/js/cameras/controller.js"></script>
-<script type="text/javascript" src="/hcf/js/cameras/validators.js"></script>
+<script type="text/javascript" src="js/cameras/templates.js"></script>
+<script type="text/javascript" src="js/cameras/helpers.js"></script>
+<script type="text/javascript" src="js/cameras/listener.js"></script>
+<script type="text/javascript" src="js/cameras/builder.js"></script>
+<script type="text/javascript" src="js/cameras/controller.js"></script>
+<script type="text/javascript" src="js/cameras/validators.js"></script>
 
 <!-- Start loading the config -->
 <script type="text/javascript">
 	try {
-		ConfigLoadJSON('/hcf/camerasgetjson');
+		ConfigLoadJSON('camerasgetjson');
 	} catch (e) {
 		console.error( e );
 	}

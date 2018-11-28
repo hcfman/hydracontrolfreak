@@ -45,7 +45,7 @@ EmailController = function () {
     	var data = Configuration.toJSON( formData );
     	
     	jQuery.ajax( {
-            url : '/hcf/email',
+            url : 'email',
             type : 'POST',
             data : data,
             contentType: 'application/json',

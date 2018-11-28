@@ -150,7 +150,7 @@ SharedTemplates.setTemplate('attribute-parameters', '\
 		%{foreach, var:parameters, repeatString:<tr><td><span class="token">%key</span></td><td><span class="token">%value</span></td><td><input type="button" value="-" onclick="ActionHelper.removeRow(this)"</td></tr>}\
 		</tbody>\
 	</table>\
-	<input type="button" name="Add parameter" onclick="JSDialog.openDialog(\'/hcf/jsp/content/forms/key-value.html\', this)" value="Add parameter">\
+	<input type="button" name="Add parameter" onclick="JSDialog.openDialog(\'jsp/content/forms/key-value.html\', this)" value="Add parameter">\
 	<br><br>\
 	</td>\
 	</tr>\
@@ -225,7 +225,7 @@ SharedTemplates.setTemplate('action-list-empty', '\
 
 SharedTemplates.setTemplate('action-list-row', '\
 	<tr>\
-	<td width="50px" class="center"><img alt="%{guestImage}" src="/hcf/images/%{guestImage}"></td>\
+	<td width="50px" class="center"><img alt="%{guestImage}" src="images/%{guestImage}"></td>\
 	<td>%{eventName}</td>\
 	<td>%{actionType}</td>\
 	<td>%{name}</td>\

@@ -132,7 +132,7 @@ ButtonGroupController = function () {
     	var data = Configuration.toJSON( this.getButtonGroupList() );
     	
     	jQuery.ajax( {
-            url : '/hcf/buttongroups',
+            url : 'buttongroups',
             type : 'POST',
             data : data,
             contentType: 'application/json',

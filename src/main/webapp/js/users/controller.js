@@ -97,7 +97,7 @@ UsersController = function() {
 		var data = Configuration.toJSON(this.data.users);
 
 		jQuery.ajax({
-			url : '/hcf/users',
+			url : 'users',
 			type : 'POST',
 			data : data,
 			contentType : 'application/json',

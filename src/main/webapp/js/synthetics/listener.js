@@ -30,7 +30,7 @@ SyntheticFormListener = function () {
 	
 	this.editSynthetic = function (note) {
 		var subject = SyntheticController.getSyntheticByName(note.data.name);
-		JSDialog.openDialog('/hcf/jsp/content/forms/synthetic-new.html', note.sender, subject, {buttonName:'Save'});
+		JSDialog.openDialog('jsp/content/forms/synthetic-new.html', note.sender, subject, {buttonName:'Save'});
 	};
 	
 	this.didLoadEditSynthetic = function (note) {

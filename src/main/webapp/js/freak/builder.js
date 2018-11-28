@@ -17,7 +17,7 @@ FreakBuilder = function () {
 				}
 				
 				tmpl.setObject(freak);
-				tmpl.set('guestText', freak.guest ? '<img alt="yes" src="/hcf/images/check.png">' : '');
+				tmpl.set('guestText', freak.guest ? '<img alt="yes" src="images/check.png">' : '');
 				list += tmpl.render();
 				
 				tmpl.reset();

@@ -22,7 +22,7 @@ RfxcomFormListener = function() {
 	this.editDevice = function(note) {
 		var name = note.data.name;
 		var command = RfxcomController.getCommandByName(name);
-		JSDialog.openDialog('/hcf/jsp/content/forms/rfxcom-new.html',
+		JSDialog.openDialog('jsp/content/forms/rfxcom-new.html',
 				note.sender, command, {
 					buttonName : 'Save'
 				});

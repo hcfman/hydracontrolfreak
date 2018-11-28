@@ -124,7 +124,7 @@ FreakController = function () {
     	var data = Configuration.toJSON( this.freakList );
     	
     	jQuery.ajax( {
-            url : '/hcf/freaks',
+            url : 'freaks',
             type : 'POST',
             data : data,
             contentType: 'application/json',

@@ -365,7 +365,7 @@ ActionFormListener = function() {
 	this.editAction = function(note) {
 		var actionName = note.data.name;
 		var action = ActionController.setDummyActionByName(actionName);
-		JSDialog.openDialog('/hcf/jsp/content/forms/action-new.html',
+		JSDialog.openDialog('jsp/content/forms/action-new.html',
 				note.sender, action, {
 					buttonName : 'Save'
 				});

@@ -124,7 +124,7 @@ ScheduleController = function () {
     	var data = Configuration.toJSON( this.schedules );
     	
     	jQuery.ajax( {
-            url : '/hcf/schedules',
+            url : 'schedules',
             type : 'POST',
             data : data,
             contentType: 'application/json',

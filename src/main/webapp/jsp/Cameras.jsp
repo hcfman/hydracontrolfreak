@@ -1,6 +1,6 @@
 <jsp:include page="/jsp/content/components/head.jsp" />
 
-<link rel="stylesheet" href="/hcf/css/cameras.css" />
+<link rel="stylesheet" href="css/cameras.css" />
 
 <jsp:include page="/jsp/content/components/headbody.jsp" />
 

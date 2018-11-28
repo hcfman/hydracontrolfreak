@@ -30,7 +30,7 @@ WatchdogFormListener = function() {
 
 	this.editWatchdog = function(note) {
 		var subject = WatchdogController.getWatchdogByName(note.data.name);
-		JSDialog.openDialog('/hcf/jsp/content/forms/watchdog-new.html',
+		JSDialog.openDialog('jsp/content/forms/watchdog-new.html',
 				note.sender, subject, {
 					buttonName : 'Save'
 				});

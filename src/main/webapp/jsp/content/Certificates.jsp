@@ -14,10 +14,10 @@
 		
 		<div id="certificateInfo"></div>
 		
-		<input id="certGenButton" type="button" value="Generate" name="Generate Certificate" onclick="JSDialog.openDialog('/hcf/jsp/content/forms/certificate-new.html', this, null, {buttonName:'Generate'})">
-		<input type="button" value="Generate CSR" name="GenerateCSR" onclick="JSDialog.openDialog('/hcf/jsp/content/forms/certificate-csr.html', this, null, {buttonName:'OK'})">
+		<input id="certGenButton" type="button" value="Generate" name="Generate Certificate" onclick="JSDialog.openDialog('jsp/content/forms/certificate-new.html', this, null, {buttonName:'Generate'})">
+		<input type="button" value="Generate CSR" name="GenerateCSR" onclick="JSDialog.openDialog('jsp/content/forms/certificate-csr.html', this, null, {buttonName:'OK'})">
 		
-		<input type="button" value="Import Own Certificate" name="ImportOwnCertificate" onclick="JSDialog.openDialog('/hcf/jsp/content/forms/certificate-importcert.html', this, null, {buttonName:'Import'})">
+		<input type="button" value="Import Own Certificate" name="ImportOwnCertificate" onclick="JSDialog.openDialog('jsp/content/forms/certificate-importcert.html', this, null, {buttonName:'Import'})">
 		<input type="button" value="Export Own Certificate" name="ExportOwnCertificate" onclick="CertificateController.listener.exportCertificate('', 'hcf', this)">
 	</div>
 	
@@ -31,7 +31,7 @@
 				<li><a href="#truststore-2">Truststore</a></li>
 			</ul>
 			<div id="keystore-1">
-				<input style="float:right;" type="button" name="Import Certificate In Keystore" onclick="JSDialog.openDialog('/hcf/jsp/content/forms/certificate-importcert.html', this, null, {buttonName:'Import'})" value="Import Certificate">
+				<input style="float:right;" type="button" name="Import Certificate In Keystore" onclick="JSDialog.openDialog('jsp/content/forms/certificate-importcert.html', this, null, {buttonName:'Import'})" value="Import Certificate">
 				
 				<table class="data">
 					<thead>
@@ -47,7 +47,7 @@
 			</div>
 			
 			<div id="truststore-2">
-				<input style="float:right;" type="button" name="Import Certificate In Truststore" onclick="JSDialog.openDialog('/hcf/jsp/content/forms/certificate-importcert.html', this, null, {buttonName:'Import'})" value="Import Certificate">
+				<input style="float:right;" type="button" name="Import Certificate In Truststore" onclick="JSDialog.openDialog('jsp/content/forms/certificate-importcert.html', this, null, {buttonName:'Import'})" value="Import Certificate">
 				
 				<table class="data">
 					<thead>

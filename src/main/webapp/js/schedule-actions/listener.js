@@ -18,7 +18,7 @@ ScheduleFormListener = function () {
 	
 	this.editSchedule = function (note) {
 		var subject = ScheduleController.getScheduleByName(note.data.name);
-		JSDialog.openDialog('/hcf/jsp/content/forms/schedule-new.html', note.sender, subject, {buttonName:'Save'});
+		JSDialog.openDialog('jsp/content/forms/schedule-new.html', note.sender, subject, {buttonName:'Save'});
 	};
 	
 	this.didLoadEditSchedule = function (note) {

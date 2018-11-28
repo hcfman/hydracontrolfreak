@@ -5,12 +5,12 @@
 <jsp:include page="/jsp/content/components/scripts.jsp" />
 
 <!-- Loading system log scripts -->
-<script type="text/javascript" src="/hcf/js/phidget-log/controller.js"></script>
+<script type="text/javascript" src="js/phidget-log/controller.js"></script>
 
 <!-- Start loading the config -->
 <script type="text/javascript">
 	try {
-		ConfigLoadJSON('/hcf/phidgetloggetjson');
+		ConfigLoadJSON('phidgetloggetjson');
 	} catch (e) {
 		console.error( e );
 	}

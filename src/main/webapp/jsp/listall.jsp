@@ -53,7 +53,7 @@ for (String webPrefix : viewJSON.getWebPrefixes()) {
 <div id="frame">
 
 <div id="container">
-<div id="logo"><img alt="Hydra Control Freak" src="images/hcf.jpg" onclick="location.assign('/hcf')"></div>
+<div id="logo"><img alt="Hydra Control Freak" src="images/hcf.jpg" onclick="location.assign('.')"></div>
 
 <div id="top-header">
 	

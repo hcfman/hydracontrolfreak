@@ -7,7 +7,7 @@ CertificateFormListener = function () {
     		tmpl.set('csr', 'Failed to generate the CSR');
     		
     		jQuery.ajax( {
-                url : '/hcf/csrgetjson',
+                url : 'csrgetjson',
                 type : 'GET',
                 contentType: 'application/json',
                 dataType: 'json',
@@ -88,7 +88,7 @@ CertificateFormListener = function () {
 		ShowActivity(true, storeName + ' is exporting certificate...');
 		
     	jQuery.ajax( {
-            url : '/hcf/export' + store + 'cert',
+            url : 'export' + store + 'cert',
             type : 'POST',
             data : {"alias": alias},
             error: function (xhr) {
@@ -100,7 +100,7 @@ CertificateFormListener = function () {
             },
             success: function (response) {
             	if (response.result == true) {
-            		JSDialog.openDialog('/hcf/jsp/content/forms/certificate-exportcert.html', sender, response, {buttonName:'OK'});
+            		JSDialog.openDialog('jsp/content/forms/certificate-exportcert.html', sender, response, {buttonName:'OK'});
             	}else{
             		JSPostNotification('OnError', response.messages.join('<br>') );
             	}
@@ -112,7 +112,7 @@ CertificateFormListener = function () {
 	
 	this.viewOwnCertificate = function (sender) {
 		var certificate = CertificateController.sections['certificates'].certificate;
-		JSDialog.openDialog('/hcf/jsp/content/forms/certificate-view.html', sender, certificate, {buttonName:'OK'});
+		JSDialog.openDialog('jsp/content/forms/certificate-view.html', sender, certificate, {buttonName:'OK'});
 	};
 	
 	this.viewCertificate = function (store, alias, sender) {
@@ -134,7 +134,7 @@ CertificateFormListener = function () {
 			}
 		}
 		
-		JSDialog.openDialog('/hcf/jsp/content/forms/certificate-view.html', sender, certificate, {buttonName:'OK'});
+		JSDialog.openDialog('jsp/content/forms/certificate-view.html', sender, certificate, {buttonName:'OK'});
 	};
 	
 	this.shouldImportCertificateInKeystore = function (note) {
@@ -153,7 +153,7 @@ CertificateFormListener = function () {
     	var data = Configuration.toJSON( tmp );
     	
     	jQuery.ajax( {
-            url : '/hcf/importkeystore',
+            url : 'importkeystore',
             type : 'POST',
             data : data,
             contentType: 'application/json',
@@ -193,7 +193,7 @@ CertificateFormListener = function () {
     	var data = Configuration.toJSON( note.data );
     	
     	jQuery.ajax( {
-            url : '/hcf/importtruststore',
+            url : 'importtruststore',
             type : 'POST',
             data : data,
             contentType: 'application/json',

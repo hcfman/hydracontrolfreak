@@ -6,7 +6,7 @@ MaintenanceController = function () {
 			Reboot(' ', 0);
 			
 			jQuery('#rebootProgress').prepend( '<span id="progressValue">0%</span>' );
-			jQuery.get('/hcf/format', this._progressRequest);
+			jQuery.get('format', this._progressRequest);
 		}
 	};
 	
@@ -16,7 +16,7 @@ MaintenanceController = function () {
 			
 			timeout	: 30000,
 			cache	: false,
-            url		: '/hcf/fprogress',
+            url		: 'fprogress',
             type	: 'GET',
             
             contentType: 'application/json',
@@ -44,11 +44,11 @@ MaintenanceController = function () {
     				}else if (value < 100){
     					jQuery('#_rebootProgress').remove();
     					alert(label + '\n\nSee "Format Log" for details');
-    					location.assign('/hcf/formatlog');
+    					location.assign('formatlog');
     				}else{ // DONE!
     					jQuery('#_rebootProgress').remove();
     					alert('Formatting was successful!\n\nSee "Format Log" for details.');
-    					location.assign('/hcf/formatlog');
+    					location.assign('formatlog');
     				}
     			}else{
     				MaintenanceController._progressRequest();
@@ -62,14 +62,14 @@ MaintenanceController = function () {
 			
 			jQuery.ajax( {
 				cache	: false,
-	            url		: '/hcf/reboot',
+	            url		: 'reboot',
 	            type	: 'GET',
 	            
 	            contentType: 'application/json',
 	            dataType: 'json'
 	        });
 			
-			Reboot('Rebooting the system', 400, '/hcf/');
+			Reboot('Rebooting the system', 400, '.');
 		}
 	};
 	
@@ -78,14 +78,14 @@ MaintenanceController = function () {
 			
 			jQuery.ajax( {
 				cache	: false,
-	            url		: '/hcf/shutdown',
+	            url		: 'shutdown',
 	            type	: 'GET',
 	            
 	            contentType: 'application/json',
 	            dataType: 'json'
 	        });
 			
-			Reboot('Shutting down the system', 30, '/hcf/');
+			Reboot('Shutting down the system', 30, '.');
 		}
 	};
 };

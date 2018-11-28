@@ -17,7 +17,7 @@ ButtonGroupBuilder = function () {
 			}
 			
 			groupTmpl.set('name', groupName);
-			groupTmpl.set('buttonsUrl', '/hcf/buttons?group=' + groupName);
+			groupTmpl.set('buttonsUrl', 'buttons?group=' + groupName);
 			
 			for (var i = 0, c = group.length; i < c; i++) {
 				var button = group[i];

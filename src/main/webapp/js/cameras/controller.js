@@ -145,7 +145,7 @@ CameraController = function () {
     	var data = Configuration.toJSON( this.getCameraList() );
     	
     	jQuery.ajax( {
-            url : '/hcf/cameras',
+            url : 'cameras',
             type : 'POST',
             data : data,
             contentType: 'application/json',

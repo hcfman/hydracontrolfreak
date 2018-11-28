@@ -284,7 +284,7 @@ ActionController = function () {
     	var data = Configuration.toJSON( this.getActionList() );
     	
     	jQuery.ajax( {
-            url : '/hcf/actions',
+            url : 'actions',
             type : 'POST',
             data : data,
             contentType: 'application/json',

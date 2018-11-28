@@ -354,7 +354,7 @@
 	<div class="section-content">
 		<input type="button" value="Manage certificates"
 			name="Manage Certificates"
-			onclick="location.assign('/hcf/certificates');">
+			onclick="location.assign('certificates');">
 	</div>
 </div>
 
