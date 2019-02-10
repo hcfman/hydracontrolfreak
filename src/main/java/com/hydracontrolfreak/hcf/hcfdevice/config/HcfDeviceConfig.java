@@ -393,11 +393,6 @@ public class HcfDeviceConfig {
 			if (webPrefixNodes.getLength() > 0) {
 				Element webPrefixElement = (Element) webPrefixNodes.item(0);
 				String webPrefixString = webPrefixElement.getTextContent();
-				if (webPrefixString.length() > 0) {
-					if (webPrefixString.substring(webPrefixString.length() - 1).equals("/")) {
-						webPrefixString = webPrefixString.substring(0, webPrefixString.length() - 1);
-					}
-				}
 				settingsConfig.setWebPrefix(webPrefixString);
 			}
 
