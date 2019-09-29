@@ -62,48 +62,7 @@ public class Formatter implements Runnable {
 
 	@Override
 	public void run() {
-		opLogger.info("Started formatting");
-		hcfConfig = freak.getHcfConfig();
-
-		if (!hcfConfig.getSettingsConfig().isCheckMount())
-			return;
-
-		diskWatchdogHandler.setFormatting(true);
-		progressQueue = hcfConfig.getDiskConfig().getProgressQueue();
-
-		progressQueue.add(new Progress(0, "Checking", true));
-		opLogger.info("Checking disk");
-		if (hcfConfig.getDiskConfig().getDiskState() == DiskState.NO_DISK) {
-			progressQueue.add(new Progress(5, "No disk present", false));
-			diskWatchdogHandler.setFormatting(false);
-			return;
-		}
-
-		progressQueue.add(new Progress(5, "Unmounting disk", true));
-
-		if (!diskWatchdogHandler.unmount()) {
-			progressQueue.add(new Progress(5, "Can't unmount disk", false));
-			diskWatchdogHandler.setFormatting(false);
-			return;
-		}
-
-		if (!deletePartitions()) {
-			progressQueue.add(new Progress(10, "Failed to delete partitons",
-					false));
-			diskWatchdogHandler.setFormatting(false);
-			return;
-		}
-
-		if (!makeFilesystem()) {
-			progressQueue.add(new Progress(15, "Failed to delete partitons",
-					false));
-			diskWatchdogHandler.setFormatting(false);
-			return;
-		}
-
-		opLogger.info("Finished formatting");
-		diskWatchdogHandler.setFormatting(false);
-		progressQueue.add(new Progress(100, "Finished", true));
+		/* Formatting could go in here */
 	}
 
 }
