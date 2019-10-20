@@ -88,7 +88,7 @@ public class Freak implements FreakApi {
 				properties.load(is);
 				hcfConfig.getSettingsConfig().setVersion(
 						properties.getProperty("hcf.version"));
-				opLogger.info("Copyright (C) Kim Hendrikse, 2018");
+				opLogger.info("Copyright (C) Kim Hendrikse, 2019");
 				opLogger.info("Version: "
 						+ hcfConfig.getSettingsConfig().getVersion());
 			}

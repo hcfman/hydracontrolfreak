@@ -50,9 +50,16 @@ public class DiskWatchdogHandler {
 	}
 
 	public synchronized boolean unmount() {
+		ScriptRunner scriptRunner = new ScriptRunner();
+		ScriptRunnerResult scriptRunnerResult = scriptRunner.spawn(
+				freak.getHcfBase() + "/bin/suwrapper", freak.getHcfBase()
+						+ "/bin/unmountpartition.sh", "unmountpartition.sh",
+				freak.getHcfBase() + "/disk");
+
+		boolean result = scriptRunnerResult.getResult() == 0;
 		setMounted(false);
 		opLogger.info("Unmounting disk");
-		return true;
+		return result;
 	}
 
 	public final void start(FreakApi freak) {
@@ -87,9 +94,21 @@ public class DiskWatchdogHandler {
 		if (isFormatting())
 			return false;
 
-		opLogger.info("Disk mounted");
-		setMounted(true);
-		return true;
+		ScriptRunner scriptRunner = new ScriptRunner();
+
+		ScriptRunnerResult scriptRunnerResult = scriptRunner.spawn(
+				freak.getHcfBase() + "/bin/suwrapper", freak.getHcfBase()
+						+ "/bin/mountpartition.sh", "mountpartition.sh",
+				freak.getHcfBase() + "/disk");
+
+		if (scriptRunnerResult.getResult() == 0) {
+			opLogger.info("Disk mounted");
+			setMounted(true);
+			return true;
+		} else {
+			setMounted(false);
+			return false;
+		}
 	}
 
 	private void handle() {
