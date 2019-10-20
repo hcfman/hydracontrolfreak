@@ -81,32 +81,12 @@ public class DiskWatchdogHandler {
 		this.dontMount = dontMount;
 	}
 
-	private boolean isDiskAvailable() {
-		return diskAvailable;
-	}
-
 	private void setDiskAvailable(boolean diskAvailable) {
 		this.diskAvailable = diskAvailable;
 	}
 
 	private boolean isFormatting() {
 		return formatting;
-	}
-
-	private boolean correctPartitionType() {
-		ScriptRunner scriptRunner = new ScriptRunner();
-		ScriptRunnerResult scriptRunnerResult = scriptRunner.spawn(
-				freak.getHcfBase() + "/bin/suwrapper", freak.getHcfBase()
-						+ "/bin/checkparttype.sh", "checkparttype.sh");
-
-		if (scriptRunnerResult.getResult() == 0)
-			return true;
-		else {
-			if (logger.isDebugEnabled())
-				logger.debug("Invalid partition type error, returned: "
-						+ scriptRunnerResult.getResult());
-			return false;
-		}
 	}
 
 	private boolean couldMount() {
@@ -139,124 +119,65 @@ public class DiskWatchdogHandler {
 			@Override
 			public void run() {
 				long lastMountAttempt = 0;
-				File driveFile = new File("/dev/mmcblk0");
-				File partitionFile = new File("/dev/mmcblk0p1");
-
 				File dvrImagesFile = new File(freak.getHcfBase()
 						+ "/disk/hcf/dvr_images");
 				File eventsFile = new File(freak.getHcfBase()
 						+ "/disk/hcf/events");
 				File tmpImagesFile = new File(freak.getHcfBase()
 						+ "/disk/hcf/tmp_images");
-				File webmFile = new File(freak.getHcfBase() + "/disk/hcf/webm");
 
 				oldState = DiskState.UN_INITIALISED;
 				while (true) {
 					newState = oldState;
 
-					if (!isFormatting()) {
-						if (!driveFile.exists()) {
-							if (isDiskAvailable()) {
-								setDontMount(false);
-								setDiskAvailable(false);
-								unmount();
-							}
-							hcfConfig.getDiskConfig().setDiskState(
-									DiskState.NO_DISK);
+					setDiskAvailable(true);
 
-							newState = DiskState.NO_DISK;
-
-							if (oldState != DiskState.NO_DISK) {
-								opLogger.info("Disk removed");
-								hcfConfig.getDiskConfig().setLastMessage(
-										"No disk present");
-							}
-						} else if (!partitionFile.exists()) {
-							setDiskAvailable(true);
-							hcfConfig.getDiskConfig().setDiskState(
-									DiskState.NO_PARTITION);
-
-							newState = DiskState.NO_PARTITION;
-
-							if (oldState != newState) {
-								opLogger.info("No valid partition exists, please format");
-								hcfConfig
-										.getDiskConfig()
-										.setLastMessage(
-												"No valid partition exists, please format");
-							}
-						} else if (!correctPartitionType()) {
-							setDiskAvailable(true);
-							hcfConfig.getDiskConfig().setDiskState(
-									DiskState.PARTITION_NOT_RIGHT_TYPE);
-							if (oldState != DiskState.PARTITION_NOT_RIGHT_TYPE) {
-								opLogger.info("Wrong type of disk inserted (Not a valid formatted disk, try re-formatting it)");
-								newState = DiskState.PARTITION_NOT_RIGHT_TYPE;
-							}
-
-							newState = DiskState.PARTITION_NOT_RIGHT_TYPE;
-
-							if (oldState != newState) {
-								opLogger.info("Invalid partition type found, wrong disk inserted? format to fix");
-								hcfConfig
-										.getDiskConfig()
-										.setLastMessage(
-												"Invalid partition type found, wrong disk inserted? format to fix");
-							}
-						} else {
-							setDiskAvailable(true);
-
-							if (!isMounted() && !isDontMount()) {
-								if (System.currentTimeMillis()
-										- lastMountAttempt >= MOUNT_RETRY_TIME) {
-									lastMountAttempt = System
-											.currentTimeMillis();
-									if (!couldMount()) {
-										if (!isFormatting()) {
-											opLogger.info("Failed to mount drive");
-											hcfConfig
-													.getDiskConfig()
-													.setLastMessage(
-															"Failed to mount disk, try formatting");
-										}
-									} else {
-										if (!dvrImagesFile.isDirectory()
-												|| !dvrImagesFile.canWrite()
-												|| !dvrImagesFile.canRead()
-												|| !eventsFile.isDirectory()
-												|| !eventsFile.canRead()
-												|| !eventsFile.canWrite()
-												|| !tmpImagesFile.isDirectory()
-												|| !tmpImagesFile.canRead()
-												|| !tmpImagesFile.canWrite()
-												|| !webmFile.isDirectory()
-												|| !webmFile.canRead()
-												|| !webmFile.canWrite()) {
-											newState = DiskState.PARTITION_MOUNTED_NO_STRUCTURE;
-											opLogger.info("Disk was mounted but it is not correctly formatted. Please format the disk.");
-											setDontMount(true);
-											unmount();
-											hcfConfig
-													.getDiskConfig()
-													.setLastMessage(
-															"Drive was mountable, but did not contain a valid structure, try formatting");
-										} else {
-											newState = DiskState.ALL_GOOD;
-											opLogger.info("Disk was mounted and is correctly formatted");
-											hcfConfig
-													.getDiskConfig()
-													.setLastMessage(
-															"Drive mounted successfully");
-										}
-									}
+					if (!isMounted() && !isDontMount()) {
+						if (System.currentTimeMillis()
+								- lastMountAttempt >= MOUNT_RETRY_TIME) {
+							lastMountAttempt = System
+									.currentTimeMillis();
+							if (!couldMount()) {
+								if (!isFormatting()) {
+									opLogger.info("Failed to mount drive");
+									hcfConfig
+											.getDiskConfig()
+											.setLastMessage(
+													"Failed to mount disk, try formatting");
+								}
+							} else {
+								if (!dvrImagesFile.isDirectory()
+										|| !dvrImagesFile.canWrite()
+										|| !dvrImagesFile.canRead()
+										|| !eventsFile.isDirectory()
+										|| !eventsFile.canRead()
+										|| !eventsFile.canWrite()
+										|| !tmpImagesFile.isDirectory()
+										|| !tmpImagesFile.canRead()
+										|| !tmpImagesFile.canWrite()) {
+									newState = DiskState.PARTITION_MOUNTED_NO_STRUCTURE;
+									opLogger.info("Disk was mounted but it is not correctly formatted. Please format the disk.");
+									setDontMount(true);
+									unmount();
+									hcfConfig
+											.getDiskConfig()
+											.setLastMessage(
+													"Drive was mountable, but did not contain a valid structure, try formatting");
+								} else {
+									newState = DiskState.ALL_GOOD;
+									opLogger.info("Disk was mounted and is correctly formatted");
+									hcfConfig
+											.getDiskConfig()
+											.setLastMessage(
+													"Drive mounted successfully");
 								}
 							}
 						}
-
-						hcfConfig.getDiskConfig().setDiskState(newState);
-
-						oldState = newState;
 					}
+
+					hcfConfig.getDiskConfig().setDiskState(newState);
+
+					oldState = newState;
 
 					try {
 						Thread.sleep(1000);
